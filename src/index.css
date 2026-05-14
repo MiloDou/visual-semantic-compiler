@@ -1,0 +1,51 @@
+/* ── CYBER_DRIVE Global Styles ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:    #0a0b0d;
+  --bg1:   #111318;
+  --bg2:   #161a20;
+  --bg3:   #1c2028;
+  --bdr:   #ffffff18;
+  --bdr2:  #ffffff28;
+  --acc:   #e8c84a;
+  --acc2:  #4a9eff;
+  --acc3:  #5bc4a0;
+  --txt:   #d4d8e0;
+  --txt2:  #8a9ab0;
+  --txt3:  #4a5568;
+  --sel:   #1a4fa0;
+  --sel2:  #1e5cc0;
+  --err:   #f47a3a;
+
+  /* Monaco / code token colors */
+  --c-kw:   #569cd6;
+  --c-ty:   #4ec9b0;
+  --c-fn:   #dcdcaa;
+  --c-cm:   #6a9955;
+  --c-st:   #ce9178;
+  --c-nm:   #b5cea8;
+  --c-pp:   #c586c0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--txt);
+}
+
+/* Scrollbar global */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: var(--bdr2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--txt3); }
+
+button { font-family: inherit; cursor: pointer; }
+input  { font-family: inherit; }

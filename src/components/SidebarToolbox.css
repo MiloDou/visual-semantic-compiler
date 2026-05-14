@@ -1,0 +1,73 @@
+.sidebar {
+  width: 150px;
+  background: var(--bg1);
+  border-right: 1px solid var(--bdr);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sb-header  { padding: 8px 10px 4px; }
+.sb-title   { font-size: 8px; color: var(--txt2); letter-spacing: 1.5px; }
+.sb-subtitle{ font-size: 7px; color: var(--txt3); letter-spacing: .8px; margin-top: 2px; }
+
+.new-node-btn {
+  margin: 6px 8px;
+  background: none;
+  border: 1px solid var(--bdr2);
+  color: var(--txt2);
+  font-size: 9px;
+  padding: 6px 4px;
+  letter-spacing: 1px;
+  width: calc(100% - 16px);
+  transition: border-color .15s, color .15s;
+}
+.new-node-btn:hover { border-color: var(--acc); color: var(--acc); }
+
+.sb-divider { height: 1px; background: var(--bdr); margin: 2px 0; flex-shrink: 0; }
+
+.sb-nav { display: flex; flex-direction: column; }
+
+.sb-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background .1s, color .1s;
+}
+.sb-item:hover              { background: var(--bg2); color: var(--txt); }
+.sb-item.active             { background: var(--sel); color: #fff; }
+.sb-item.active .sb-icon    { color: #7ab8ff; }
+
+.sb-icon  { font-size: 11px; color: var(--txt3); width: 14px; text-align: center; }
+.sb-label { font-size: 10px; color: inherit; letter-spacing: .3px; }
+
+/* Drag nodes */
+.sb-toolnodes { padding: 4px 0; }
+.sb-section-lbl {
+  font-size: 7px; color: var(--txt3);
+  letter-spacing: 1px; padding: 2px 10px 4px;
+}
+
+.tool-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 4px;
+  cursor: grab;
+  border: 1px solid transparent;
+  margin: 2px 6px;
+  gap: 2px;
+  transition: border-color .15s, background .15s;
+}
+.tool-node:hover  { border-color: var(--bdr2); background: var(--bg2); }
+.tool-node:hover svg ellipse,
+.tool-node:hover svg rect,
+.tool-node:hover svg polygon { stroke: var(--acc) !important; }
+.tool-node:active { cursor: grabbing; background: var(--bg3); }
+
+.tool-lbl { font-size: 7px; color: var(--txt3); letter-spacing: .3px; }

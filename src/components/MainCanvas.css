@@ -1,0 +1,39 @@
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.canvas-label {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: var(--txt3);
+  letter-spacing: 2px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Override ReactFlow control buttons */
+.react-flow__controls-button {
+  background: var(--bg2) !important;
+  border-bottom: 1px solid var(--bdr) !important;
+  fill: var(--txt2) !important;
+}
+.react-flow__controls-button:hover {
+  background: var(--bg3) !important;
+  fill: var(--txt) !important;
+}
+
+/* Edge style overrides */
+.react-flow__edge-path { stroke: #e8c84a !important; }
+.react-flow__connectionline { stroke: #e8c84a88 !important; }
+
+/* Selection box */
+.react-flow__selection {
+  background: rgba(74, 158, 255, 0.05) !important;
+  border: 1px solid var(--acc2) !important;
+}

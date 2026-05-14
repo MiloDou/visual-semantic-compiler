@@ -1,0 +1,89 @@
+.topnav {
+  height: 42px;
+  background: var(--bg1);
+  border-bottom: 1px solid var(--bdr);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.topnav-left  { display: flex; align-items: center; gap: 4px; }
+.topnav-center{ display: flex; align-items: center; gap: 6px; }
+.topnav-right { display: flex; align-items: center; gap: 6px; }
+
+/* Logo */
+.app-logo { display: flex; align-items: center; gap: 6px; margin-right: 6px; }
+.logo-sq {
+  width: 16px; height: 16px;
+  background: var(--acc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 900; color: #000; line-height: 1;
+}
+.app-name { font-size: 11px; font-weight: 700; color: var(--txt); letter-spacing: 1.5px; }
+
+/* Menu buttons */
+.nav-menus { display: flex; }
+.menu-btn {
+  background: none;
+  border: none;
+  border-right: 1px solid var(--bdr);
+  color: var(--txt2);
+  font-size: 10px;
+  padding: 0 10px;
+  height: 42px;
+  letter-spacing: .5px;
+  transition: background .1s, color .1s;
+}
+.menu-btn:hover   { background: var(--bg2); color: var(--txt); }
+.menu-btn.debug-tab { background: var(--acc2); color: #fff; font-weight: 700; }
+.menu-btn.debug-tab:hover { background: #3a8eef; }
+
+/* Filename input */
+.filename-input {
+  background: var(--bg);
+  border: 1px solid var(--bdr2);
+  color: var(--txt);
+  font-size: 10px;
+  padding: 4px 8px;
+  width: 130px;
+  outline: none;
+  letter-spacing: .3px;
+}
+.filename-input:focus { border-color: var(--acc2); }
+
+/* Compile button */
+.compile-btn {
+  background: #3a3a3a;
+  color: #fff;
+  border: none;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 14px;
+  letter-spacing: .8px;
+  transition: background .15s;
+  white-space: nowrap;
+}
+.compile-btn:hover    { background: #4a4a4a; }
+.compile-btn.compiling{ background: var(--acc2); animation: pulse .6s infinite; }
+.compile-btn.success  { background: #2a7a4a; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.65} }
+
+/* Stats */
+.stat-pill { font-size: 9px; color: var(--txt2); letter-spacing: .3px; }
+.stat-pill b { color: var(--txt); }
+.stat-pill.time { color: var(--txt3); font-size: 9px; }
+
+/* Icon buttons */
+.icon-btn {
+  background: none;
+  border: 1px solid var(--bdr);
+  color: var(--txt2);
+  font-size: 11px;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  transition: color .1s, border-color .1s;
+}
+.icon-btn:hover { color: var(--txt); border-color: var(--bdr2); }
