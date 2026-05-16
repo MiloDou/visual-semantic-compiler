@@ -29,8 +29,8 @@
 }
 
 /* Edge style overrides */
-.react-flow__edge-path { stroke: #e8c84a !important; }
-.react-flow__connectionline { stroke: #e8c84a88 !important; }
+.react-flow__edge-path { stroke: var(--acc) !important }
+.react-flow__connectionline { stroke: var(--acc); opacity: 0.5; }
 
 /* Selection box */
 .react-flow__selection {

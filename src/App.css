@@ -13,3 +13,13 @@
   overflow: hidden;
   min-height: 0;
 }
+
+.resize-handle {
+  width: 4px;
+  flex-shrink: 0;
+  background: var(--bdr);
+  cursor: col-resize;
+  transition: background .15s;
+  z-index: 10;
+}
+.resize-handle:hover { background: var(--acc); }

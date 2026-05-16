@@ -35,7 +35,7 @@ function ShapeIcon({ shape }) {
   }
 }
 
-export default function SidebarToolbox() {
+export default function SidebarToolbox({ width })  {
   const [active, setActive] = useState('logs')
 
   const onDragStart = (e, type) => {
@@ -44,7 +44,7 @@ export default function SidebarToolbox() {
   }
 
   return (
-    <aside className="sidebar">
+    <aside className="sidebar" style={{ width, minWidth: width }}>
       <div className="sb-header">
         <div className="sb-title">TOOLBOX_V1.0</div>
         <div className="sb-subtitle">ALGORITHMIC_VPROG</div>

@@ -10,15 +10,15 @@
 }
 
 .sb-header  { padding: 8px 10px 4px; }
-.sb-title   { font-size: 8px; color: var(--txt2); letter-spacing: 1.5px; }
-.sb-subtitle{ font-size: 7px; color: var(--txt3); letter-spacing: .8px; margin-top: 2px; }
+.sb-title   { font-size: 14px; color: var(--txt2); letter-spacing: 1.5px; }
+.sb-subtitle{ font-size: 10px; color: var(--txt3); letter-spacing: .8px; margin-top: 2px; }
 
 .new-node-btn {
   margin: 6px 8px;
   background: none;
   border: 1px solid var(--bdr2);
   color: var(--txt2);
-  font-size: 9px;
+  font-size: 11px;
   padding: 6px 4px;
   letter-spacing: 1px;
   width: calc(100% - 16px);
@@ -42,13 +42,13 @@
 .sb-item.active             { background: var(--sel); color: #fff; }
 .sb-item.active .sb-icon    { color: #7ab8ff; }
 
-.sb-icon  { font-size: 11px; color: var(--txt3); width: 14px; text-align: center; }
-.sb-label { font-size: 10px; color: inherit; letter-spacing: .3px; }
+.sb-icon  { font-size: 13px; color: var(--txt3); width: 14px; text-align: center; }
+.sb-label { font-size: 12px; color: inherit; letter-spacing: .3px; }
 
 /* Drag nodes */
 .sb-toolnodes { padding: 4px 0; }
 .sb-section-lbl {
-  font-size: 7px; color: var(--txt3);
+  font-size: 10px; color: var(--txt3);
   letter-spacing: 1px; padding: 2px 10px 4px;
 }
 
@@ -70,4 +70,4 @@
 .tool-node:hover svg polygon { stroke: var(--acc) !important; }
 .tool-node:active { cursor: grabbing; background: var(--bg3); }
 
-.tool-lbl { font-size: 7px; color: var(--txt3); letter-spacing: .3px; }
+.tool-lbl { font-size: 10px; color: var(--txt3); letter-spacing: .3px; }

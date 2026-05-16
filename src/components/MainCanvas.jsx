@@ -22,8 +22,8 @@ export default function MainCanvas() {
   const onConnect = useCallback(
     params => setEdges(eds => addEdge({
       ...params,
-      style: { stroke: '#e8c84a', strokeWidth: 1.5 },
-      markerEnd: { type: MarkerType.ArrowClosed, color: '#e8c84a' },
+      style: { stroke: '#a855f7', strokeWidth: 1.5 },
+      markerEnd: { type: MarkerType.ArrowClosed, color: '#a855f7' },
     }, eds)),
     [setEdges]
   )
@@ -74,8 +74,8 @@ export default function MainCanvas() {
         />
         <MiniMap
           style={{ background: 'var(--bg2)', border: '1px solid var(--bdr)' }}
-          nodeColor="#e8c84a44"
-          maskColor="#0a0b0dcc"
+          nodeColor="#a855f744"
+          maskColor="#080d0acc"
         />
       </ReactFlow>
     </div>

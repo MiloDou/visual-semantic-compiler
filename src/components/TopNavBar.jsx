@@ -4,7 +4,8 @@ import './TopNavBar.css'
 export default function TopNavBar({
   filename, setFilename,
   onCompile, isCompiling,
-  buildStatus, ramUsage
+  buildStatus, ramUsage,
+  fontSize, onFontSize
 }) {
   const [time, setTime] = useState('')
 
@@ -22,7 +23,6 @@ export default function TopNavBar({
   const btnLabel = isCompiling ? '⏳ COMPILING...'
     : buildStatus === 'RUN_OK' ? '✓ COMPILED'
     : '▶ COMPILE_RUN'
-
   const btnClass = `compile-btn ${isCompiling ? 'compiling' : ''} ${buildStatus === 'RUN_OK' ? 'success' : ''}`
 
   return (
@@ -39,7 +39,6 @@ export default function TopNavBar({
           <button className="menu-btn debug-tab">DEBUG</button>
         </div>
       </div>
-
       <div className="topnav-center">
         <input
           className="filename-input"
@@ -51,12 +50,14 @@ export default function TopNavBar({
           {btnLabel}
         </button>
       </div>
-
       <div className="topnav-right">
         <span className="stat-pill">RAM: <b>{ramUsage}</b></span>
         <span className="stat-pill">DISK: <b>720K</b></span>
         <span className="stat-pill">NODE: <b>{buildStatus}</b></span>
         <span className="stat-pill time">{time}</span>
+        <button className="icon-btn" onClick={() => onFontSize(-1)} title="Reducir fuente">A-</button>
+        <span className="stat-pill">{fontSize}px</span>
+        <button className="icon-btn" onClick={() => onFontSize(+1)} title="Aumentar fuente">A+</button>
         <button className="icon-btn" title="Settings">⚙</button>
         <button className="icon-btn" title="Display">▣</button>
         <button className="icon-btn" title="Help">?</button>

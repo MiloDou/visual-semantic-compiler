@@ -5,9 +5,8 @@ import './RightSplitPanel.css'
 const MONACO_OPTIONS = {
   readOnly: true,
   minimap: { enabled: false },
-  fontSize: 11,
   lineHeight: 18,
-  fontFamily: "'Courier New', monospace",
+  fontFamily: "'Share Tech Mono', 'Courier New', monospace",
   scrollBeyondLastLine: false,
   renderLineHighlight: 'none',
   overviewRulerBorder: false,
@@ -23,21 +22,21 @@ const MONACO_THEME = {
   base: 'vs-dark',
   inherit: true,
   rules: [
-    { token: 'keyword',         foreground: '569cd6' },
-    { token: 'type',            foreground: '4ec9b0' },
-    { token: 'identifier',      foreground: 'd4d8e0' },
-    { token: 'string',          foreground: 'ce9178' },
-    { token: 'number',          foreground: 'b5cea8' },
-    { token: 'comment',         foreground: '6a9955', fontStyle: 'italic' },
-    { token: 'delimiter',       foreground: 'd4d8e0' },
-    { token: 'tag',             foreground: 'dcdcaa' },
+    { token: 'keyword',   foreground: 'c084fc' },
+    { token: 'type',      foreground: '4ade80' },
+    { token: 'identifier',foreground: '86efac' },
+    { token: 'string',    foreground: 'f0abfc' },
+    { token: 'number',    foreground: 'a5f3fc' },
+    { token: 'comment',   foreground: '166534', fontStyle: 'italic' },
+    { token: 'delimiter', foreground: '86efac' },
+    { token: 'tag',       foreground: '86efac' },
   ],
   colors: {
-    'editor.background':           '#0a0b0d',
-    'editor.foreground':           '#d4d8e0',
-    'editorLineNumber.foreground': '#4a5568',
-    'editorCursor.foreground':     '#e8c84a',
-    'editor.selectionBackground':  '#1a4fa066',
+    'editor.background':           '#080d0a',
+    'editor.foreground':           '#86efac',
+    'editorLineNumber.foreground': '#166534',
+    'editorCursor.foreground':     '#a855f7',
+    'editor.selectionBackground':  '#4c1d9566',
     'editorIndentGuide.background':'#ffffff0a',
   },
 }
@@ -46,14 +45,13 @@ function beforeMount(monaco) {
   monaco.editor.defineTheme('cyber', MONACO_THEME)
 }
 
-export default function RightSplitPanel({ cppCode, asmCode, consoleLogs }) {
+export default function RightSplitPanel({ cppCode, asmCode, consoleLogs, width, fontSize }) {
   return (
-    <div className="right-panel">
+    <div className="right-panel" style={{ width, minWidth: width }}>
       <div className="panel-hdr">
         <span className="panel-title">■ CODE_OUT.SRC</span>
         <div className="panel-dot" />
       </div>
-
       <div className="code-viewer">
         <div className="code-col">
           <div className="col-hdr">C++</div>
@@ -64,7 +62,7 @@ export default function RightSplitPanel({ cppCode, asmCode, consoleLogs }) {
               value={cppCode}
               theme="cyber"
               beforeMount={beforeMount}
-              options={MONACO_OPTIONS}
+              options={{ ...MONACO_OPTIONS, fontSize }}
             />
           </div>
         </div>
@@ -78,12 +76,11 @@ export default function RightSplitPanel({ cppCode, asmCode, consoleLogs }) {
               value={asmCode}
               theme="cyber"
               beforeMount={beforeMount}
-              options={MONACO_OPTIONS}
+              options={{ ...MONACO_OPTIONS, fontSize }}
             />
           </div>
         </div>
       </div>
-
       <div className="console-panel">
         <div className="panel-hdr">
           <span className="panel-title">■ ECHO_TERMINAL</span>
